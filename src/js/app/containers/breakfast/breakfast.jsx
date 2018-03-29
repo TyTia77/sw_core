@@ -7,27 +7,33 @@ import Item from "Components/header-list/item/item"
 import BreakfastFooter from "Components/breakfast-footer/breakfast-footer"
 import Disclaimer from 'Components/disclaimer/disclaimer'
 
-const Breakfast = ({data}) =>
-    <div className="section-container breakfast">
-        <div className="header">
-            <Header title={data.title.subTitle} subheader={true} noPriceHeader={true} />
-            {
-                data.tag.Active
-                    ?
-                        <span className="serveduntil">
-                            <span class="served">served</span>
-                            <span class="until">until</span>
-                            <span class="breakfast-time">{data.tag.Time}</span>
-                        </span>
-                    : ""
-            }
+const Breakfast = ({data, timeline}) => {
+
+    let drinkPrice = data.bug.Price
+
+    // add drink price to sub price
+    data.items.map(item => {
+        item.priceWith = (parseFloat(item.Price) + parseFloat( '0.' +drinkPrice)).toFixed(2)
+        return item
+    })
+
+    console.log('price', drinkPrice)
+
+    return (
+        <div className="section-container breakfast">
+            <div className="header">
+                <Header title={data.title.subTitle} subheader={true} noPriceHeader={false} />
+            </div>
+            <Item data={data.items.filter(item => item.Active)} special={true} />
+            <BreakfastFooter timeline={timeline} bug={data.bug} tag={data.tag} />
+            <Disclaimer text={data.disclaimer} tm={data.trademark} />
         </div>
-        <Item data={data.items.filter(item => item.Active)} special={true}/>
-        <BreakfastFooter bug={data.bug} />
-        <Disclaimer text={data.disclaimer} tm={data.trademark}/>
-    </div>
+    )
+}
+
 Breakfast.propTypes = {
-    data: propTypes.object
+    data     : propTypes.object.isRequired,
+    timeline : propTypes.object
 }
 
 export default Breakfast

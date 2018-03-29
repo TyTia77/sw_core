@@ -13,7 +13,7 @@ const KidsPak = ({ title }) =>
     <div id="kids-pak" className={style.container}>
         <div className={style.left}>
             <div className={style.label}>{title}</div>
-            <div className={style['lower-text']}>Choose a mini sub from Ham‡,<br/>Turkey Breast‡ <br/>or Veggie Delite®^</div>
+            <div className={style['lower-text']}>Choose a mini sub from Ham‡,<br/>Turkey Breast‡,<br/> Turkey Breast‡ and Ham‡,<br/>Chicken Breast,<br/>or Veggie Delite®^.</div>
             <div className={style.addon}>Plus Bear Pure Fruit Yoyos, Robinsons Fruit Shoot My-5 or water</div>
         </div>
         <div className={style.right}>

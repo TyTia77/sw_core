@@ -4,20 +4,21 @@
     10% { transform: rotate(-15deg); }
     15% { transform: rotate(15deg); }
     20% { transform: rotate(-15deg); }
-    25% { transform: rotate(0deg); }          
+    25% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
 :local .container{
-    text-align: right;
+    text-align: center;
+
     .img{
         display: inline-block;
         position: relative;
         width: auto;
-        animation-name: 'shake_animation';
-        animation-duration: 3000ms;
+        // animation-name: 'shake_animation';
+        // animation-duration: 3000ms;
         transform-origin:center bottom;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
+        // animation-iteration-count: infinite;
+        // animation-timing-function: ease-in-out;
 
         &:nth-child(1){
             height: 130px;

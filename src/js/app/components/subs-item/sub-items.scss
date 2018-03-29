@@ -11,7 +11,7 @@
     10% { transform: rotate(-5deg); }
     15% { transform: rotate(5deg); }
     20% { transform: rotate(-5deg); }
-    25% { transform: rotate(0deg); }          
+    25% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
 @keyframes pulse_animation{
@@ -31,16 +31,16 @@
     &:nth-child(odd){
        margin-right: 0px;
     }
-    
 
     &.add-drink-container {
         align-items: center;
         text-align: left;
         position: relative;
-        img {
+        video {
             display: inline-block;
-            height: 220px;
-            margin-top: 54px;
+            height: 350px;
+            margin-top: -57px;
+            margin-left: -50px;
         }
         .bug{
             background: $subwayGreen;
@@ -48,24 +48,31 @@
             width: 160px;
             border-radius: 80px;
             text-align: center;
-            animation-name: pulse_animation;
-            animation-duration: 3000ms;
-            transform-origin:center;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
             position: absolute;
             left: 150px;
             top: 70px;
             z-index: -9;
+            &.animated {
+                animation-name: pulse_animation;
+                animation-duration: 3000ms;
+                transform-origin:center;
+                animation-iteration-count: 1;
+                animation-timing-function: ease-in-out;
+            }
             .add {
-                @include type(25px, bold, $white);
-                line-height: 25px;
-                margin-top: 40px;
+                @include type(40px, bold, $white);
+                line-height: 35px;
+                margin-top: 30px;
+                text-transform: uppercase;
+            }
+            .drink {
+                @include type(24px, bold, $white);
+                line-height: 20px;               
+                text-transform: uppercase;
             }
             .price {
                 @include type(60px, bold, $white);
-                line-height: 60px;
-                
+                line-height: 55px;
             }
         }
     }
@@ -82,7 +89,7 @@
         z-index: -999;
 
         // TODO: for testing
-
+        
         .icon-container{
             position: absolute;
             right: 0;
@@ -95,7 +102,7 @@
             .lowfat-icon-show{
                 opacity: 1;
             }
-    
+
             .heart-icon-show{
                 opacity: 1;
             }

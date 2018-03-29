@@ -15,7 +15,7 @@
 
     .menu {
         // border: 1px solid green;
-        width: 730px;
+        width: 650px;
 
         .second-line {
             @include type($engery, normal, false);
@@ -29,7 +29,7 @@
     }
     .price {
         // border: 1px solid pink;
-        width: 130px;
+        width: 100px;
         text-align: right;
     }
 

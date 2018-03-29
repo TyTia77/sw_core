@@ -11,9 +11,9 @@ import style from './style'
 
 const Image = ({ props }) =>
         <div className={style.container}>
-            <img className={style.image} src={`${imgPath}drinks/cappucino.png`} alt="" />
+            <video className={style.image} src={`${imgPath}drinks/coffee.webm`} alt="" autoPlay loop />
             <img className={style.image} src={`${imgPath}drinks/waterbottle.png`} alt="" />
-            <img className={style.image} src={`${imgPath}drinks/subwaycup.png`} alt="" />
+            <video className={style.image} src={`${imgPath}drinks/coke.webm`} alt="" autoPlay loop/>
         </div>
 
 Image.propTypes = {

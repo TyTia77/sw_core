@@ -8,11 +8,11 @@
 
         .label{
             @include type($heading1, bold, $onionPurple);
-            margin-bottom: 30px;
+            margin-bottom: 0px;
             line-height: $heading1;
         }
         .lower-text{
-            @include type(26px, bold, $subwayGreen);
+            @include type(24px, bold, $subwayGreen);
         }
 
         .addon {

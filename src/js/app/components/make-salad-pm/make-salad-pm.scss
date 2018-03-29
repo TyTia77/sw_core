@@ -1,0 +1,56 @@
+@import '~StylePath/mixins.scss';
+
+:local .container {
+    display: block;
+    opacity: 1;
+    transition: opacity ease-in 1s;
+    padding-bottom: 140px;
+    bottom: 400px;
+    position: absolute;
+    left: 30px;
+    width: 100%;
+    &.active {
+        opacity: 1;
+    }
+
+    .title{
+        @include type($heading1, bold, $onionPurple);
+        line-height: $heading1;
+        width: 100%;
+        position: absolute;
+        z-index: 99;
+        left: 0;
+        top: 50px;
+    }
+
+    .imgContainer{
+        padding: 0 30px;
+        position: absolute;
+        top: 50px;
+        left: 500px;;
+        width: auto;
+
+
+        .salad{
+            height: 400px;
+            bottom: -320px;
+            z-index: 999;
+            position: absolute;
+        }
+
+        .apple{
+            top: 180px;
+            z-index: 999;
+            position: absolute;
+        }
+
+    }
+
+    .extra {
+        @include type($heading2, bold, $subwayGreen);
+        display: block;
+        position: absolute;
+        top: 140px;
+        bottom: -10px;
+    }
+}

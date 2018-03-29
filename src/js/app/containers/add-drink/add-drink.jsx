@@ -15,7 +15,7 @@ const AddDrink = ({ data }) =>
             <div className={style.add_drink_container}>
                 <div className={style.inner}>
                     <div className={style.add_a}>add a</div>
-                    <div className={style.drink}>drink +</div>
+                    <div className={style.drink}>drink for</div>
                     <div className={style.price}>{data.bug.Price}p</div>
                 </div>
                 <div className={style.video}>
