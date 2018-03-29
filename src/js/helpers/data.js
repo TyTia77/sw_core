@@ -74,7 +74,7 @@ function getItems(){
 function getBacon(){
     let hasDrinks = getDS('add bacon'),
         bacon = hasDrinks ? _.first(handlePrice(joinCsv(hasDrinks, productList, 'Product Code'))) : ''
-
+    
     return bacon ? {
         Active: bacon.Active,
         Price: bacon.Pence == '00' ? bacon.Pounds : bacon.Price

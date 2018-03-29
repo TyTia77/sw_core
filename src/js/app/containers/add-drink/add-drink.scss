@@ -18,9 +18,9 @@
             line-height: 180px;
         }
         .drink {
-            @include type(150px, bold, $white);
+            @include type(110px, bold, $white);
             text-transform: uppercase;
-            line-height: 140px;
+            line-height: 100px;
         }
         .price {
             @include type(310px, bold, $white);

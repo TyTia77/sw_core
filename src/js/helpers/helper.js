@@ -8,7 +8,7 @@ import { getCsvMap } from 'Helpers/map-table'
  */
 const devEnv = window.location.port.includes(devPort)
 
-export const imgPath = devEnv ? `${window.location.href}/images/` : '/content/SW_CORE.zip/images/'
+export const imgPath = devEnv ? `${window.location.href}images/` : '/content/SW_CORE.zip/images/'
 
 // helper functions
 export function capitalizeFirst(str){
@@ -84,11 +84,11 @@ export const calToKjRatio = 4.184
 
 /**
  * @function converts and rounds up kilojules to calorie
- * @param {number} kj
+ * @param {number} cal
  * @return {number}
  */
-export function kjToCal(kj) {
-    return Math.ceil(kj / calToKjRatio)
+export function calToKj(cal) {
+    return Math.ceil(cal * calToKjRatio)
 }
 
 /**
@@ -100,4 +100,16 @@ export function getCsvList(contentName) {
     return [...getCsvMap(contentName)]
         .concat(['UK - Product Mix', 'UK - Settings'])
         .map(listItem => listItem.includes('.csv') ? listItem : `${listItem}.csv`)
+}
+
+export function findFile(path){
+    return new Promise((resolve, reject) =>
+        $.get(imgPath + path)
+            .done(function () {
+                resolve(true)
+            })
+            .fail(function () {
+                reject(false)
+            })
+    )
 }

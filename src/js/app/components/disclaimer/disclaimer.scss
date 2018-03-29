@@ -7,10 +7,11 @@
     right: $viewerPadding;
     bottom: 10px;
     line-height: $body;
+    background-color: white;
+    padding-top: 20px;
+
     .trademark, .thirdparty-trademark {
         font-size: $tradeMark;
         line-height: $tradeMark;
     }
-
-    // border: 1px solid green;
 }

@@ -1,11 +1,12 @@
 import React from "react"
 import propTypes from 'prop-types'
-import { kjToCal } from 'Helpers/helper'
+import { calToKj } from 'Helpers/helper'
 
 require('./item.scss')
 
 const Item = ({data, special, singleCol}) =>
     <div>
+        {console.log('data', data)}
         {data.map((item, index) =>
             <div
                 className={"row" + (getSize(data) == index && special ? ' special' : '')}
@@ -14,7 +15,7 @@ const Item = ({data, special, singleCol}) =>
                 <div className="menu">
                     {item['Display Name']} <wbr/>
                     {getSize(data) == index && special ? <div className="second-line">(Bacon≠, Sausage, Poached Egg & Cheese)</div> : ''}
-                    {item.Energy ? <div className="menu-cal">{item.Energy} kJ / {kjToCal(item.Energy)} kcal per 6-inch</div>:''}
+                    {item.Energy ? <div className="menu-cal">{item.Energy} kJ / {calToKj(item.Energy)} kcal per 6-inch</div>:''}
                 </div>
 
                 <div className="price">
@@ -24,10 +25,10 @@ const Item = ({data, special, singleCol}) =>
                     item.priceWith
                         ?
                             <div className="price-with-drink">
-                                £{ + item.priceWith || 1.69}
+                                £{item.priceWith || 1.69}
                             </div>
                         :
-                            <div className="price-with-drink"></div>
+                            ''// <div className="price-with-drink"></div>
                 }
             </div>
         )}

@@ -1,5 +1,10 @@
 @import '~StylePath/mixins.scss';
 
+:local .container{
+    display: flex;
+    flex-direction: column;
+}
+
 .side-snacks-label{
     color: $lettuceGreen !important;
 }
@@ -11,7 +16,6 @@
 
     .side-snacks-menu {
         width: 60%;
-        // border: 1px solid purple;
         display: inline-table;
         @include type(36px, bold, $subwayGreen);
         .items-name {
@@ -19,14 +23,21 @@
         }
     }
 
+    :local .split{
+        width: calc(100% / 2)!important;
+    }
+
     .side-snacks-image {
         position: absolute;
         right: 0;
         top: 0;
-        // border: 1px solid red;
-        // height: 215px;
         width: 40%;
     }
 
     @include clearFloats;
+}
+
+
+:local .bacon{
+    height: 60%;
 }

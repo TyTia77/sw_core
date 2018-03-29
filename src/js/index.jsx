@@ -9,8 +9,6 @@ import { Data } from 'Helpers/data'
 import { getCsvMap } from 'Helpers/map-table'
 import { getCsvList, addDom } from 'Helpers/helper'
 
-import a from 'Helpers/test'
-
 window.Q = q
 
 window.renderMenu = function(contentName){
@@ -46,6 +44,5 @@ function switchBoard(cName){
 function init(cName){
     addDom()
     let data = new Data(cName)
-    console.log('data from index', data.get())
     ReactDOM.render(<App data={data.get()} />, document.getElementById('app'))
 }

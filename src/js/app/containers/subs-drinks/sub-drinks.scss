@@ -16,7 +16,7 @@
 
                 &::before {
                     //TODO: fix path
-                    content: url('../../../../images/footlongGreen.png');
+                    // content: url('../../../../images/sixInchDrinkGreen.png');
                 }
             }
 
@@ -32,5 +32,9 @@
         bottom: 130px;
         height: 330px;
         overflow: hidden;
+
+        #image-container{
+            opacity: 1;
+        }
     }
 }

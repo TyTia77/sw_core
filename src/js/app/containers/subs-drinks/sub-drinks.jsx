@@ -57,7 +57,7 @@ export default class SubDrinks extends React.Component {
     }
 
     componentDidMount(){
-        slider('image-container', 'video-container')
+        // slider('image-container', 'video-container')
     }
 
     render(){
@@ -71,7 +71,7 @@ export default class SubDrinks extends React.Component {
                 </div>
                 <div className="slider">
                     <ImageComponent />
-                    <VideoComponent />
+                    {/* <VideoComponent /> */}
                 </div>
                 <Disclaimer text={this.state.disclaimer} tm={this.state.trademark}/>
             </div>
