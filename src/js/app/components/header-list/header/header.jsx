@@ -31,13 +31,11 @@ const Header = ({ title, subheader, noPriceHeader }) =>
         }
 
         {
-            !subheader
-                ?
-                    <div className="header-price-with-drink">
+            noPriceHeader
+                ?   ''
+                :   <div className="header-price-with-drink">
                         <div className={"header-bottom" + (!subheader ? ' no-sub-header' : '')}></div>
                     </div>
-                :
-                    ''
         }
     </div>
 

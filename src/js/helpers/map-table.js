@@ -29,6 +29,12 @@ export function getComponentMap(item) {
         case 'add_a_drink':
             return 'AddDrink'
 
+        case 'half_bacon':
+            return 'HalfBacon'
+
+        case 'sides_am':
+            return 'SidesAM'
+
         default:
             return `Error: Cannot Map Component, ${item}`
     }
@@ -55,6 +61,8 @@ export function getTitleName(str) {
             return 'sidesTitle'
         case 'Kids Pak':
             return 'kidsTitle'
+        case 'Add Bacon':
+            return 'baconTitle'
 
         default:
             return ''
@@ -63,18 +71,21 @@ export function getTitleName(str) {
 
 // TODO: document
 export function getCsvMap(str) {
+
     let
         find = str.toLowerCase().replace(/ /g, '').replace('.zip', ''),
         list = {
-            'breakfastsubsanddrink': ['UK - Menu - Breakfast Subs.csv', 'Breakfast Title', 'UK - Add Drink Bug', 'UK Breakfast Served Until Option'],
-            'classicsubs': ['UK - Menu - Classic Subs', 'Classic Subs Market Selection', 'Classic Subs Title', 'UK - Add Drink Bug'],
-            'drinksandsalad': ['UK - Menu - Drinks.csv', 'Drinks and Salad Title', 'UK - Add Bacon'],
-            'drinksam': ['UK - Menu - Drinks.csv', 'Drinks AM Title', 'UK - Add Bacon'],
-            'lowfatsubs': ['UK - Menu - Low Fat Subs.csv', 'Low Fat Subs Market Selection', 'Low Fat Subs Title', 'UK - Add Drink Bug'],
-            'premiumsubs': ['UK - Menu - Premium Subs.csv', 'Premium Subs Market Selection', 'Premium Subs Title'],
-            'sidesandkidspak': ['UK - Menu - Sides Snacks', 'Sides Snacks and Treats Title', 'UK - Add Bacon'],
-            'subanddrinkdeal': ['UK - Menu - Sub and Drink Deal', 'Sub and Drink Deal Title'],
-            'addadrink': ['UK - Add Drink Bug'],
+            'breakfastsubsanddrink' : ['UK - Menu - Breakfast Subs.csv', 'Breakfast Title', 'UK - Add Drink Bug', 'UK Breakfast Served Until Option'],
+            'classicsubs'           : ['UK - Menu - Classic Subs', 'Classic Subs Market Selection', 'Classic Subs Title', 'UK - Add Drink Bug'],
+            'drinksandsalad'        : ['UK - Menu - Drinks.csv', 'Drinks and Salad Title', 'UK - Add Bacon'],
+            'drinksam'              : ['UK - Menu - Drinks.csv', 'Drinks AM Title', 'UK - Add Bacon'],
+            'lowfatsubs'            : ['UK - Menu - Low Fat Subs.csv', 'Low Fat Subs Market Selection', 'Low Fat Subs Title', 'UK - Add Drink Bug'],
+            'premiumsubs'           : ['UK - Menu - Premium Subs.csv', 'Premium Subs Market Selection', 'Premium Subs Title'],
+            'sidesandkidspak'       : ['UK - Menu - Sides Snacks', 'Sides Snacks and Treats Title'],
+            'subanddrinkdeal'       : ['UK - Menu - Sub and Drink Deal', 'Sub and Drink Deal Title'],
+            'addadrink'             : ['UK - Add Drink Bug'],
+            'addbacon'              : ['UK - Add Bacon'],
+            'sidesam'               : ['UK - Menu - Sides Snacks', 'Sides Snacks and Treats Title', 'UK - Add Bacon'],
         }
 
     return list[find] || ''

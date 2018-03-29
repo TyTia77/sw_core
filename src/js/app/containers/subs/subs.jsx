@@ -9,10 +9,10 @@ require('./subs.scss')
 import SubItem from "Components/subs-item/sub-items"
 import Disclaimer from 'Components/disclaimer/disclaimer'
 
-const Subs = ({ data }) =>
+const Subs = ({ data, timeline }) =>
     <div className="section-container">
         <div className="section-header">{data.title.subTitle}</div>
-        {getSubList(data).map((item, index) => <SubItem key={index} subDetails={item} />)}
+        {getSubList(data).map((item, index) => <SubItem key={index} subDetails={item} timeline={timeline} />)}
         <Disclaimer text={data.disclaimer} tm={data.trademark}/>
     </div>
 
@@ -199,7 +199,8 @@ function addDummy(){
 }
 
 Subs.propTypes = {
-    subItems: propTypes.object
+    subItems: propTypes.object,
+    timeline: propTypes.object
 }
 
 export default Subs
