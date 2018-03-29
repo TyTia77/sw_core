@@ -1,0 +1,42 @@
+@import '~StylePath/mixins.scss';
+
+.row {
+    // border: 1px solid blue;
+    display: flex;
+    padding: 5px;
+
+    &:not(special){
+        @include type($heading2,bold,$subwayGreen);
+    }
+
+    &.special {
+        @include type($heading2,bold,$subwayYellow);
+    }
+
+    .menu {
+        // border: 1px solid green;
+        width: 730px;
+
+        .second-line {
+            @include type($engery, normal, false);
+        }
+
+        .menu-cal {
+            display: inline-block;
+            font-size: 25px;
+            font-weight: 100;
+        }
+    }
+    .price {
+        // border: 1px solid pink;
+        width: 130px;
+        text-align: right;
+    }
+
+    .price-with-drink {
+        // border: 1px solid purple;
+        box-sizing: border-box;
+        text-align: right;
+        width: 160px;
+    }
+}

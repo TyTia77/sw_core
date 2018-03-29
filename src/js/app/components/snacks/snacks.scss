@@ -1,0 +1,36 @@
+@keyframes shake_animation{
+    0% { transform: rotate(0deg); }
+    5% { transform: rotate(15deg); }
+    10% { transform: rotate(-15deg); }
+    15% { transform: rotate(15deg); }
+    20% { transform: rotate(-15deg); }
+    25% { transform: rotate(0deg); }          
+    100% { transform: rotate(0deg); }
+}
+:local .container{
+    text-align: right;
+    .img{
+        display: inline-block;
+        position: relative;
+        width: auto;
+        animation-name: 'shake_animation';
+        animation-duration: 3000ms;
+        transform-origin:center bottom;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+        &:nth-child(1){
+            height: 130px;
+        }
+
+        &:nth-child(2){
+            height: 250px;
+            z-index: 1;
+            transform: translate(50px, -120px)
+        }
+    }
+
+    .soup{
+        transform: translate(10px, 30px) scale(2.5);
+    }
+}

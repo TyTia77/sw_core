@@ -1,0 +1,54 @@
+@import './variables.scss';
+
+//Layout
+
+@mixin clearFloats{
+    &::after{
+        display: block;
+        clear: both;
+        content: '';
+    }
+}
+
+@mixin SectionContainer{
+    box-sizing: border-box;
+    padding: $viewerPadding;
+    width: calc(100%);
+    height: calc(100%);
+    float: left;
+}
+
+//Typography
+
+@mixin type($fontsize, $fontweight, $color) {
+    font-size: $fontsize;
+    @if $fontweight == 'normal' {
+        font-family: '6inch-font';
+    } @else {
+        font-family: 'foot-long-font';
+    }
+    color: $color;
+}
+
+// TODO: remove
+// @mixin MenuTitle($color) {
+//     font-size: 76px;
+//     font-family: 'foot-long-font';
+//     font-weight: bold;
+//     color: $color;
+// }
+
+// @mixin SubTitle($color){
+//     font-size: 36px;
+//     font-family: 'foot-long-font';
+//     font-weight: bold;
+//     color: $color;
+// }
+
+
+
+// @mixin Disclaimer($color){
+//     font-size: 18px;
+//     font-family: '6inch-font';
+//     color: $color;
+// }

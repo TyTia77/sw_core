@@ -1,0 +1,36 @@
+@import '~StylePath/mixins.scss';
+
+.sub-drinks-container{
+    @include SectionContainer();
+
+
+}
+.sub-drinks-header {
+    color: $tomatoRed;
+}
+
+.section-container {
+    .header-menu {
+        .header-price-with-drink{
+            .header-bottom{
+
+                &::before {
+                    //TODO: fix path
+                    content: url('../../../../images/footlongGreen.png');
+                }
+            }
+
+
+        }
+    }
+    .slider {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: 30px;
+        right: 30px;
+        bottom: 130px;
+        height: 330px;
+        overflow: hidden;
+    }
+}
