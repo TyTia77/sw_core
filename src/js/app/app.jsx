@@ -9,9 +9,6 @@ import SubDrinks from './containers/subs-drinks/sub-drinks'
 import Breakfast from './containers/breakfast/breakfast'
 import AddDrink from './containers/add-drink/add-drink'
 
-import * as actions from '../actions/actions'
-import store from '../stores/store'
-
 require('StylePath/reset.scss')
 require('./app.scss')
 
@@ -21,21 +18,6 @@ export default class App extends React.Component {
         this.setState({
             items: this.props.data
         })
-        store.on("change", this.testflux)
-        // actions.test()
-    }
-
-    testflux(){
-        console.log('works from app')
-        console.log('store', store.getWeather())
-    }
-
-    remove(){
-        console.log('removing')
-    }
-
-    componentWillUnmount(){
-        store.removeListener("change", this.remove);
     }
 
     render() {

@@ -12,9 +12,6 @@ import Snacks from 'Components/snacks/snacks'
 import Disclaimer from 'Components/disclaimer/disclaimer'
 import KidsPak from 'Components/kids-pak/kidsPak'
 
-import store from '../../../stores/store'
-import * as actions from '../../../actions/actions'
-
 //NOTE: may need to implement flux or redux later on
 // atm each stateful component may request weather temp
 // ideally we'd like to use a some sort of state manager
@@ -29,15 +26,7 @@ export default class SideSnacks extends React.Component {
         }
     }
 
-    testflux(){
-        console.log('changes from sides')
-    }
-
     componentWillMount(){
-
-        store.on("change", this.testflux)
-        // actions.test()
-
 
         getTemp.call(this)
 
