@@ -11,10 +11,6 @@
   "author": "Ty Tia",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-=======
-    "flux": "^3.1.3",
->>>>>>> c5565208edbce4ea68dbf5b0927bbb5daa2d9052
     "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.0",
