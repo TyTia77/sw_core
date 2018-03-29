@@ -14,13 +14,14 @@ import SidesAM from './containers/sides-am/sides-am'
 import * as actions from '../actions/actions'
 import store from '../stores/store'
 
+
 require('StylePath/reset.scss')
 require('./app.scss')
 
 export default class App extends React.Component {
 
     componentWillMount() {
-        
+
         let timeline = new SB.Timeline({
             debug: false, // truthy value, will visualise the timeline
             framerate: 30, // frames per second, default: 25
@@ -30,21 +31,6 @@ export default class App extends React.Component {
             items: this.props.data,
             timeline
         })
-        store.on("change", this.testflux)
-        // actions.test()
-    }
-
-    testflux(){
-        console.log('works from app')
-        console.log('store', store.getWeather())
-    }
-
-    remove(){
-        console.log('removing')
-    }
-
-    componentWillUnmount(){
-        store.removeListener("change", this.remove);
     }
 
     render() {
