@@ -115,7 +115,7 @@ export default class SideSnacks extends React.Component {
                     <div className="side-snacks-image">
                         <Snacks image={this.state.img} />
                     </div>
-                </div>
+                    </div>
             )
         } else {
 
