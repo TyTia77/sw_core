@@ -1,0 +1,43 @@
+@import '~StylePath/mixins.scss';
+
+#make-it-a-salad {
+    display: flex;
+    height: 200px;
+    position: relative;
+    left: 0;
+    opacity: 1;
+    transition: opacity ease-in 1s;
+    &.active {
+        opacity: 1;
+    }
+
+    .child{
+
+        &:nth-child(1){
+            @include type($heading1, bold, $onionPurple);
+            line-height: $heading1;
+            width: 300px;
+        }
+        &:nth-child(2){
+            padding: 0 30px;
+
+            .image{
+                width: auto;
+                position: relative;
+
+                &:nth-child(2){
+                    z-index: 1;
+                    transform: translate(-10px, -90px);
+                }
+            }
+
+        }
+        &:nth-child(3){
+            @include type($heading2, bold, $subwayGreen);
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

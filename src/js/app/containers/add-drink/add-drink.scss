@@ -1,0 +1,38 @@
+@import '~StylePath/mixins.scss';
+
+:local .add_drink_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    .inner {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        color: $white;
+        position: relative;
+        .add_a {
+            @include type(190px, bold, $white);
+            text-transform: uppercase;
+            line-height: 180px;
+        }
+        .drink {
+            @include type(150px, bold, $white);
+            text-transform: uppercase;
+            line-height: 140px;
+        }
+        .price {
+            @include type(310px, bold, $white);
+            line-height: 300px;
+        }
+    }
+    .video {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -99;
+    }
+}

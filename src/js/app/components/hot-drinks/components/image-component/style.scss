@@ -1,0 +1,33 @@
+@mixin trans($left, $height: ''){
+    @if $height == ''{
+        transform: translateX($left +px);
+    } @else {
+        transform: translate($left +px, -$height +px);
+    }
+}
+
+:local .container{
+    height: 100%;
+    position: relative;
+
+    .image{
+        position: absolute;
+        bottom: 0;
+
+        &:nth-child(1){
+            height: 160px;
+            @include trans(30, 15);
+        }
+
+        &:nth-child(2){
+            height: 270px;
+            z-index: 1;
+            @include trans(110);
+        }
+
+        &:nth-child(3){
+            height: 190px;
+            @include trans(180, 10);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@import "~StylePath/mixins.scss";
+
+.app-container{
+    width: 960px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    @include clearFloats;
+}

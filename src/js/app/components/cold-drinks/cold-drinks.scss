@@ -1,0 +1,38 @@
+@import '~StylePath/mixins.scss';
+
+.cold-drinks-container{
+    width: 100%;
+    margin-bottom: 30px;
+
+    .drinks-label{
+        display: block;
+        font-size: 60px;
+        font-weight: bold;
+        color: $green;
+    }
+    .section-header{
+        color: $lettuceGreen;
+        display: block;
+    }
+
+    .cold-drinks-column{
+        display: inline-table;
+        @include type($heading2, bold, $subwayGreen);
+        text-transform: capitalize;
+
+        &:nth-child(2) {
+            .items-price {
+                padding-right: 30px;
+            }
+        }
+
+        .items-container{
+            .items-name {
+                width: 70%;
+            }
+            .items-price {
+                text-align: right;
+            }
+        }
+    }
+} 

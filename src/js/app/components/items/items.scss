@@ -1,0 +1,39 @@
+
+@import '~StylePath/mixins.scss';
+
+.items-container{
+    width: 100%;
+    // font-size: 20px;
+    // border: 1px solid green;
+    overflow: hidden;
+    display: table-row;
+
+    .items-name{
+        display: table-cell;
+        padding-left: 5px;
+        width: 60%;
+
+    }
+
+    .items-price{
+        display: table-cell;
+        min-width: 120px;
+        width: 30%;
+        // border: 1px solid green;
+        // padding-right: 5px;
+    }
+
+    .items-price-lg{
+        display: table-cell;
+        min-width: 110px;
+        width: 20%;
+        // border: 1px solid red;
+        // padding-right: 5px;
+    }
+
+    &::after{
+        display: block;
+        content: '';
+        clear: both;
+    }
+}

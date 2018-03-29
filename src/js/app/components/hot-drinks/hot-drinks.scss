@@ -1,0 +1,62 @@
+
+@import '~StylePath/mixins.scss';
+
+
+.hot-drinks-container{
+    position: relative;
+    margin-bottom: 30px;
+
+    .hot-drinks-label{
+        display: block;
+        font-size: 60px;
+        font-weight: bold;
+        color: $green;
+    }
+
+
+    .hot-drinks-column{
+        display: table;
+            @include type($heading2, bold, $subwayGreen);
+        text-transform: capitalize;
+
+        .hot-drinks-header-container {
+            display: table-row;
+            // border: 1px solid red;
+
+            .hot-drinks-header{
+                width: 120px;
+                text-transform: capitalize;
+                display: table-cell;
+
+                &:nth-child(2){
+                    width: 110px;
+                }
+            }
+
+            &::after {
+                clear: both;
+                content: '';
+                display: block;
+            }
+
+        }
+    }
+
+    .section-header{
+        color: $lettuceGreen;
+    }
+
+    .hot-drinks-image{
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    &::after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+}

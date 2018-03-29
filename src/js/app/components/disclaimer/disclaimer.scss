@@ -1,0 +1,16 @@
+@import '~StylePath/mixins.scss';
+
+.disclaimer-container {
+    @include type($body,normal,$subwayGreen);
+    position: absolute;
+    left: $viewerPadding;
+    right: $viewerPadding;
+    bottom: 10px;
+    line-height: $body;
+    .trademark, .thirdparty-trademark {
+        font-size: $tradeMark;
+        line-height: $tradeMark;
+    }
+
+    // border: 1px solid green;
+}

@@ -1,0 +1,32 @@
+@import '~StylePath/mixins.scss';
+
+.side-snacks-label{
+    color: $lettuceGreen !important;
+}
+
+.side-snacks-menu-container{
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 150px;
+
+    .side-snacks-menu {
+        width: 60%;
+        // border: 1px solid purple;
+        display: inline-table;
+        @include type(36px, bold, $subwayGreen);
+        .items-name {
+            width: 70%;
+        }
+    }
+
+    .side-snacks-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        // border: 1px solid red;
+        // height: 215px;
+        width: 40%;
+    }
+
+    @include clearFloats;
+}

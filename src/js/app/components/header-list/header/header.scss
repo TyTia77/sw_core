@@ -1,0 +1,67 @@
+@import '~StylePath/mixins.scss';
+
+.header-row-container {
+    display: flex;
+
+    .header-row{
+        width: 700px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        .section-header {
+            line-height: $heading1;
+        }
+
+        .yellow{
+            color: $subwayYellow!important;
+        }
+
+        .header-choose,
+        .header-bread {
+            @include type($heading2,bold,$subwayYellow);
+            line-height: $heading2;
+
+        }
+
+
+    }
+
+    .header-price{
+        width: 130px;
+        position: relative;
+    }
+
+    .header-bottom {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 20px;
+
+        &::before {
+            //TODO: fix path
+            content: url('../../../../../images/sixInchGreen.png');
+        }
+    }
+
+    .header-price-with-drink{
+        width: 190px;
+        position: relative;
+        margin-right: -20px;
+
+        .header-bottom{
+            right: 0;
+
+            &::before {
+                //TODO: fix path
+                content: url('../../../../../images/sixInchDrinkGreen.png');
+            }
+        }
+
+
+    }
+
+    .no-sub-header {
+        transform: translateY(-5px);
+    }
+}

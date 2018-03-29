@@ -1,0 +1,18 @@
+@import '~StylePath/mixins.scss';
+
+.section-container{
+
+    @include SectionContainer();
+
+
+    .section-header{
+        @include type($heading1, bold, $tomatoRed);
+        line-height: $heading1;
+        margin-bottom: 20px;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+     }
+
+}

@@ -1,0 +1,54 @@
+@import '~StylePath/mixins.scss';
+
+:local .container {
+    display: flex;
+
+    .left{
+        width: 45%;
+
+        .label{
+            @include type($heading1, bold, $onionPurple);
+            margin-bottom: 30px;
+            line-height: $heading1;
+        }
+        .lower-text{
+            @include type(26px, bold, $subwayGreen);
+        }
+
+        .addon {
+            @include type($body, normal, $subwayGreen);
+        }
+    }
+
+    .right{
+        width: 50%;
+
+        .img {
+            position: relative;
+            width: auto;
+            display: inline-block;
+
+            &:nth-child(1) {
+                height: 270px;
+                transform: translate(40px, 25px)
+
+            }
+            &:nth-child(2) {
+                position: absolute;
+                height: 300px;
+                z-index: 1;
+                transform: translate(-10px, -10px)
+            }
+            &:nth-child(3) {
+                height: 150px;
+                z-index: 1;
+                transform: translate(100px, 20px)
+            }
+            &:nth-child(4) {
+                height: 100px;
+                z-index: 1;
+                transform: translate(330px, -210px)
+            }
+        }
+    }
+}

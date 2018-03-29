@@ -1,0 +1,53 @@
+@import '~StylePath/mixins.scss';
+
+#image-container{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: ease-in opacity 1s;
+
+    &.active {
+        opacity: 1;
+    }
+
+    .child{
+        flex: 1 1 0;
+
+        &:nth-child(1){
+            position: relative;
+        }
+
+        &:nth-child(2){
+            text-align: center;
+            @include type(66px, bold, $tomatoRed);
+
+        }
+
+        &:nth-child(3){
+            flex: none;
+            width: 200px;
+        }
+
+        .image{
+            width: auto;
+            position: absolute;
+        }
+
+        .image-sub {
+            height: 150px;
+            right: 0;
+        }
+
+        .image-drink {
+            height: 150px;
+        }
+
+    }
+
+
+}

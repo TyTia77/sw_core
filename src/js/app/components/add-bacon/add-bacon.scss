@@ -1,0 +1,36 @@
+@import '~StylePath/mixins.scss';
+
+#add-bacon-container{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    opacity: 1;
+    transition: opacity ease-in 1s;
+    overflow: hidden;
+    &.active {
+        opacity: 1;
+    }
+    .bacon {
+        width: 100%;
+        padding: 186px 0;
+        display: block;
+        text-align: center;
+        align-items: center;
+        @include type($heading1, bold, $white);
+    }
+    video {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -99;
+    }
+}
