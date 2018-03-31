@@ -1,7 +1,9 @@
-import q from "./vendor/q"
-import React from "react"
-import ReactDOM from "react-dom"
-import sb from "./vendor/sb"
+import q from './vendor/q'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import sb from './vendor/sb'
+import { Provider } from 'react-redux'
+import store from './store'
 
 import App from "./app/app"
 
@@ -44,5 +46,9 @@ function switchBoard(cName){
 function init(cName){
     addDom()
     let data = new Data(cName)
-    ReactDOM.render(<App data={data.get()} />, document.getElementById('app'))
+    ReactDOM.render(
+        <Provider store={store}>
+            <App data={data.get()} />
+        </Provider>
+        , document.getElementById('app'))
 }

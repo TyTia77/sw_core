@@ -9,7 +9,7 @@ import propTypes from 'prop-types'
 
 const ComponentName = ({ props }) =>
     <div>
-        
+
     </div>
 
 ComponentName.propTypes = {
