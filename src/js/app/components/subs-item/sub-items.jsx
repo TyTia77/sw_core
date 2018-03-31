@@ -1,11 +1,11 @@
 import React from "react"
 import propTypes from 'prop-types'
 import { imgPath, calToKj} from 'Helpers/helper'
+import { connect } from 'react-redux'
 
 require('./sub-items.scss')
 
-// const SubsItem = ({ subDetails }) =>{
-export default class SubsItem extends React.Component {
+class SubsItem extends React.Component {
 
     // before mounting
     componentWillMount(){
@@ -64,3 +64,9 @@ SubsItem.propTypes = {
     subDetails : propTypes.object,
     timeline   : propTypes.object
 }
+
+export default connect(store => {
+    return {
+        timeline: store.timeline.timeline
+    }
+})(SubsItem)

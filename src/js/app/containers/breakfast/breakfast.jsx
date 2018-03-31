@@ -7,7 +7,7 @@ import Item from "Components/header-list/item/item"
 import BreakfastFooter from "Components/breakfast-footer/breakfast-footer"
 import Disclaimer from 'Components/disclaimer/disclaimer'
 
-const Breakfast = ({data, timeline}) => {
+const Breakfast = ({ data }) => {
 
     let drinkPrice = data.bug.Price
 
@@ -25,7 +25,7 @@ const Breakfast = ({data, timeline}) => {
                 <Header title={data.title.subTitle} subheader={true} noPriceHeader={false} />
             </div>
             <Item data={data.items.filter(item => item.Active)} special={true} />
-            <BreakfastFooter timeline={timeline} bug={data.bug} tag={data.tag} />
+            <BreakfastFooter bug={data.bug} tag={data.tag} />
             <Disclaimer text={data.disclaimer} tm={data.trademark} />
         </div>
     )

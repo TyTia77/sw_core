@@ -1,11 +1,13 @@
 import React from "react"
 import propTypes from 'prop-types'
 import { imgPath } from 'Helpers/helper'
+import { connect } from 'react-redux'
+
 
 // style
 require('./breakfast-footer.scss')
 
-export default class BreakfastFooter extends React.Component {
+class BreakfastFooter extends React.Component {
 
     // before mounting
     componentWillMount() {
@@ -17,6 +19,7 @@ export default class BreakfastFooter extends React.Component {
 
     // after mounting
     componentDidMount() {
+        console.log('mounted from footer', this.props)
         if (this.state.bug.Active){
             this.props.timeline.addEvent(function () {
                 let bug = document.querySelector('.price-bug')
@@ -63,3 +66,9 @@ BreakfastFooter.propTypes = {
     bug      : propTypes.object,
     timeline : propTypes.object
 }
+
+export default connect(store => {
+    return {
+        timeline: store.timeline.timeline
+    }
+})(BreakfastFooter)

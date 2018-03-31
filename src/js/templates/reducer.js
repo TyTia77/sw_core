@@ -1,6 +1,7 @@
-export function weather(
+//TODO: fix
+export function functionName(
     state = {
-        weather: 'cold',
+        propName: 'cold',
         fetching: false,
         fetched: false,
         error: null
@@ -19,7 +20,7 @@ export function weather(
                 ...state,
                 fetching: false,
                 fetched: true,
-                weather: action.payload
+                propName: action.payload
             };
         }
     }

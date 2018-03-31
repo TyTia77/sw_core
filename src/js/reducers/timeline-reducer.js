@@ -1,6 +1,6 @@
-export function weather(
+export function timeline(
     state = {
-        weather: 'cold',
+        timeline: false,
         fetching: false,
         fetched: false,
         error: null
@@ -8,18 +8,18 @@ export function weather(
     action
 ) {
     switch (action.type) {
-        case "FETCH_WEATHER": {
+        case "FETCH_TIMELINE": {
             return { ...state, fetching: true }
         }
-        case "FETCH_WEATHER_REJECTED": {
+        case "FETCH_TIMELINE_REJECTED": {
             return { ...state, fetching: false, error: action.payload }
         }
-        case "FETCH_WEATHER_FULFILLED": {
+        case "FETCH_TIMELINE_FULFILLED": {
             return {
                 ...state,
                 fetching: false,
                 fetched: true,
-                weather: action.payload
+                timeline: action.payload
             };
         }
     }

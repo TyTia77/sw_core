@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { fetchWeather } from '../actions/weather-action'
+import { fetchWeather, fetchTimeline } from '../actions'
 
 import Subs from './containers/subs/subs'
 import Drinks from './containers/drinks/drinks'
@@ -16,29 +16,16 @@ import SidesAM from './containers/sides-am/sides-am'
 require('StylePath/reset.scss')
 require('./app.scss')
 
-// connects redux with react
-// @connect(store => {
-//     return {
-//         weather: store.weather.weather
-//     }
-// })
 class App extends React.Component {
 
     componentWillMount() {
-
-        let timeline = new SB.Timeline({
-            debug: false, // truthy value, will visualise the timeline
-            framerate: 30, // frames per second, default: 25
-            cycleTime: 3000, // milliseconds, length of the timeline cycle, default: 0
-        })
-        this.setState({
-            items: this.props.data,
-            timeline
-        })
-
         // dispatch action
         this.props.dispatch(fetchWeather())
-        console.log('props', this.props)
+        this.props.dispatch(fetchTimeline())
+
+        this.setState({
+            items: this.props.data
+        })
     }
 
     render() {
@@ -61,7 +48,7 @@ class App extends React.Component {
                 {
                     function(){
                         const Component = components[this.state.items.componentType]
-                        return <Component timeline={this.state.timeline} data={this.state.items} />
+                        return <Component data={this.state.items} />
                     }.call(this)
                 }
             </div>
@@ -73,8 +60,4 @@ App.propTypes = {
     data: propTypes.object
 }
 
-export default connect(store => {
-    return {
-        weather: store.weather.weather
-    }
-})(App)
+export default connect()(App)

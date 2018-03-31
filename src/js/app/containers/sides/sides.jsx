@@ -67,9 +67,14 @@ export default class SideSnacks extends React.Component {
                 })
             })
         })
+
+
+        console.log('props from sides', this.props)
     }
 
     shouldComponentUpdate(nextProps, nextState){
+
+        console.log('nextProps from sides', nextProps)
 
         if (nextState.weather != this.state.weather)
             return true
