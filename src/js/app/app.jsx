@@ -17,12 +17,12 @@ require('StylePath/reset.scss')
 require('./app.scss')
 
 // connects redux with react
-@connect(store => {
-    return {
-        weather: store.weather.weather
-    }
-})
-export default class App extends React.Component {
+// @connect(store => {
+//     return {
+//         weather: store.weather.weather
+//     }
+// })
+class App extends React.Component {
 
     componentWillMount() {
 
@@ -38,6 +38,7 @@ export default class App extends React.Component {
 
         // dispatch action
         this.props.dispatch(fetchWeather())
+        console.log('props', this.props)
     }
 
     render() {
@@ -71,3 +72,9 @@ export default class App extends React.Component {
 App.propTypes = {
     data: propTypes.object
 }
+
+export default connect(store => {
+    return {
+        weather: store.weather.weather
+    }
+})(App)
