@@ -36,10 +36,8 @@ export default class App extends React.Component {
             timeline
         })
 
-
         // dispatch action
-        // this.props.dispatch(fetchWeather())
-        console.log('props', this.props)
+        this.props.dispatch(fetchWeather())
     }
 
     render() {
