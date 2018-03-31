@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { slider, getTemp } from 'Helpers/helper'
+import $ from 'jquery'
 
 // style
 import style from './drinks.scss'
@@ -8,7 +9,7 @@ import kidStyle from 'Components/kids-pak/kidsPak.scss'
 require('./drinks.scss')
 
 // component
-import ColdDrinks from 'Components/cold-drinks/cold-drinks'
+import ColdDrinks from 'Components/cold-drinks'
 import HotDrinks from 'Components/hot-drinks/hot-drinks'
 import KidsPak from 'Components/kids-pak/kidsPak'
 import AddBacon from 'Components/add-bacon/add-bacon'
@@ -46,11 +47,12 @@ export default class Drinks extends React.Component {
         getTemp.call(this)
     }
 
-    // componentDidMount(){
-    //     if (this.state.addBacon.Active){
-    //         slider('make-it-a-salad', 'add-bacon-container')
-    //     }
-    // }
+    componentDidMount(){
+        // if (this.state.addBacon.Active){
+        //     slider('make-it-a-salad', 'add-bacon-container')
+        // }
+        console.log('finding', $('.cold-drinks-container'))
+    }
 
     render(){
         return this.state.weather == 'hot'

@@ -26,33 +26,48 @@ export default class App extends React.Component {
             debug: false, // truthy value, will visualise the timeline
             framerate: 30, // frames per second, default: 25
             cycleTime: 3000, // milliseconds, length of the timeline cycle, default: 0
-        });
+        })
         this.setState({
             items: this.props.data,
             timeline
         })
+
+        console.log('ready')
+
+        store.on("timeline ready", this.handleTimeline)
+        actions.initTimeline()
+    }
+
+    handleTimeline(){
+        console.log('getting timeline', store.getTimeline())
     }
 
     render() {
+        return this.dom()
+    }
 
-        // component mapper
+    mapComponents(component){
         const components = {
-            'Subs'      : Subs,
-            'Breakfast' : Breakfast,
-            'Drinks'    : Drinks,
-            'DrinksAM'  : DrinksAM,
-            'SubDrinks' : SubDrinks,
-            'Sides'     : Sides,
-            'AddDrink'  : AddDrink,
-            'HalfBacon' : HalfBacon,
-            'SidesAM'   : SidesAM,
+            'Subs': Subs,
+            'Breakfast': Breakfast,
+            'Drinks': Drinks,
+            'DrinksAM': DrinksAM,
+            'SubDrinks': SubDrinks,
+            'Sides': Sides,
+            'AddDrink': AddDrink,
+            'HalfBacon': HalfBacon,
+            'SidesAM': SidesAM,
         }
 
+        return components[component] || false
+    }
+
+    dom(){
         return (
-            <div className="app-container">
+            <div class="app-container">
                 {
-                    function(){
-                        const Component = components[this.state.items.componentType]
+                    function () {
+                        const Component = this.mapComponents(this.state.items.componentType)
                         return <Component timeline={this.state.timeline} data={this.state.items} />
                     }.call(this)
                 }

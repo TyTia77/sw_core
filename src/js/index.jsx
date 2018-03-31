@@ -1,17 +1,12 @@
-import q from "./vendor/q"
 import React from "react"
 import ReactDOM from "react-dom"
-import sb from "./vendor/sb"
 
 import App from "./app/app"
+import vendor from './vendor'
 
-import { Data } from 'Helpers/data'
-import { getCsvMap } from 'Helpers/map-table'
-import { getCsvList, addDom } from 'Helpers/helper'
+import { getCsvList, addDom, Data } from 'Helpers'
 
 import a from 'Helpers/test'
-
-window.Q = q
 
 window.renderMenu = function(contentName){
 
