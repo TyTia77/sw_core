@@ -6,7 +6,7 @@ import { getCsvMap } from 'Helpers/map-table'
 /**
  * @const {boolean} checks if in dev environment within the react directory
  */
-const devEnv = window.location.port.includes(devPort)
+export const devEnv = window.location.port.includes(devPort)
 
 export const imgPath = devEnv ? `${window.location.href}images/` : '/content/SW_CORE.zip/images/'
 
