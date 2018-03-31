@@ -1,10 +1,10 @@
 (function(){
-    window.abc = 'your mother'
+    window.abc = 'testing'
 
     abc = {}
 
     abc.mag = function(){
-        console.log('hey, my name is maggie')
+        console.log('hey')
     }
 
     window.abc = abc

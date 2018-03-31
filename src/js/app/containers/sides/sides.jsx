@@ -29,15 +29,15 @@ export default class SideSnacks extends React.Component {
         }
     }
 
-    testflux(){
-        console.log('changes from sides')
+    handleWeather(){
+        console.log('changes from sides', store.weatherResults())
     }
 
     componentWillMount(){
+        store.on("weather change", this.handleWeather)
 
-        store.on("change", this.testflux)
-        // actions.test()
-
+        console.log('get all', store.weatherResults())
+        actions.getWeather()
 
         getTemp.call(this)
 

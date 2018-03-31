@@ -5,18 +5,32 @@ class Store extends EventEmitter {
     constructor() {
         super()
         this.state = {
-            weather: 'hot'
+            weather: 'cold'
         }
     }
 
-    getWeather() {
-        return this.state.weather
+    weatherResults() {
+        return this.state.weather || false
+    }
+
+    getTimeline() {
+        return this.state.timeline || false
     }
 
     handleActions(action) {
         switch (action.type) {
-            case "tester": {
-                this.emit('change')
+            case "weather": {
+                if (action.weather != this.state.weather){
+                    this.state.weather = action.weather
+                    this.emit('weather change')
+                }
+
+                break
+            }
+
+            case 'timeline': {
+                this.state.timeline = action.timeline
+                this.emit('timeline ready')
                 break
             }
         }
